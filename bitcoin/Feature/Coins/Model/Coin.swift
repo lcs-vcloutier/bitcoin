@@ -16,15 +16,3 @@ struct Coin: Decodable {
     let current_price: Float
     let price_change_percentage_24h: Float
 }
-
-extension Coin {
-    
-//    static let dummyData: [Coin] = [
-//        Coin(symbol: "BTC", name: "Bitcoin", price_usd: "6465.26", percent_change_24h: "-1.27", percent_change_1h: "0.19", percent_change_7d: "-0.93"),
-//        Coin(symbol: "ETH", name: "Ethereum", price_usd: "6465.26", percent_change_24h: "-1.27", percent_change_1h: "0.19", percent_change_7d: "-0.93"),
-//        Coin(symbol: "XRP", name: "xRP", price_usd: "6465.26", percent_change_24h: "-1.27", percent_change_1h: "0.19", percent_change_7d: "-0.93"),
-//        Coin(symbol: "XYZ", name: "haha", price_usd: "6465.26", percent_change_24h: "-1.27", percent_change_1h: "0.19", percent_change_7d: "-0.93"),
-//        Coin(symbol: "ABD", name: "testing", price_usd: "6465.26", percent_change_24h: "-1.27", percent_change_1h: "0.19", percent_change_7d: "-0.93")
-//    ]
-    
-}
