@@ -11,35 +11,32 @@ struct CoinSubView: View {
     let item: Coin
     
     var body: some View {
-        
-        //        let current_price: Float
-        //        let price_change_percentage_24h: Float
-        //        let high_24h: Int
-        //        let low_24h : Int
-        VStack(alignment: .leading) {
+        VStack {
             GroupBox {
-                HStack {
-                    AsyncImage(url: URL(string: item.image)!) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 25, height: 25)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    Text(item.symbol.uppercased())
-                        .bold()
+                VStack(alignment: .leading) {
                     
-                    Spacer()
-                }
-                
-                Text("\(String(format: "%.1f", arguments: [item.current_price]))$")
-                    .font(.title)
-                    .bold()
-                HStack {
-                    Text("24H High: \(String(format: "%.1f", arguments: [item.high_24h]))$")
-                    Text("24H Low: \(String(format: "%.1f", arguments: [item.low_24h]))$")
+                    HStack {
+                        AsyncImage(url: URL(string: item.image)!) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 25, height: 25)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        Text(item.symbol.uppercased())
+                            .bold()
+                        
+                        Spacer()
+                    }
+                    
+                    Text("\(String(format: "%.1f", arguments: [item.current_price]))$")
+                        .font(.title)
+                        .bold()
+                    Text("High: \(String(format: "%.1f", arguments: [item.high_24h]))$")
+                    Text("Low: \(String(format: "%.1f", arguments: [item.low_24h]))$")
+                    Text("Change: \(String(format: "%.1f", arguments: [item.price_change_percentage_24h]))%")
                 }
             }
             .padding()
