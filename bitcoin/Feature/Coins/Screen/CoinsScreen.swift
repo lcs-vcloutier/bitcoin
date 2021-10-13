@@ -10,18 +10,24 @@ import SwiftUI
 struct CoinsScreen: View {
     // Injecting service into viewmodel
     @StateObject private var vm = CoinsViewModelImpl(service: CoinsServiceImpl())
-
+    @State private var searchText = ""
+    
     var body: some View {
         Group {
             if vm.coins.isEmpty {
                 ProgressView()
             } else {
                 NavigationView {
-            List(vm.coins, id: \.symbol) { item in
-                CoinView(item: item)
-            }
-            .navigationBarTitle("Cryptos")
-            }
+                    List(vm.coins, id: \.symbol) { item in
+                        
+                        NavigationLink(destination: CoinSubView()) {
+                            CoinView(item: item)
+                        }
+                        
+                    }
+                    .searchable(text: $searchText)
+                    .navigationBarTitle("Cryptos")
+                }
             }
         }
         .task {
