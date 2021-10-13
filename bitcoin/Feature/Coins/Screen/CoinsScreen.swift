@@ -16,10 +16,12 @@ struct CoinsScreen: View {
             if vm.coins.isEmpty {
                 ProgressView()
             } else {
+                NavigationView {
             List(vm.coins, id: \.symbol) { item in
                 CoinView(item: item)
             }
             .navigationBarTitle("Cryptos")
+            }
             }
         }
         .task {

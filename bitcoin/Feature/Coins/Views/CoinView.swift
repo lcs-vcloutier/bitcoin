@@ -13,16 +13,10 @@ struct CoinView: View {
     
     var body: some View {
         VStack (alignment: .leading) {
-            Text("\(item.name): \(item.price_usd)$")
+            Text("\(item.name): \(String(format: "%.1f", arguments: [item.current_price]))$")
                 .font(.title)
                 .bold()
-            HStack {
-                Text("1 Hour: \(item.percent_change_1h)%")
-                Spacer()
-                Text("24 Hours: \(item.percent_change_24h)%")
-                Spacer()
-                Text("1 Week: \(item.percent_change_7d)%")
-            }
+         
             .font(.caption)
         }
     }

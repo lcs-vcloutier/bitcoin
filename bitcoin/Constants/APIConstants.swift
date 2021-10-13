@@ -9,5 +9,5 @@ import Foundation
 
 // Define the URL that doesn't change
 enum APIConstants {
-    static let baseURL = "https://api.coinlore.net/api"
+    static let baseURL = "https://api.coingecko.com/api/v3"
 }
