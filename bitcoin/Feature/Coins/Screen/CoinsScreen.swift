@@ -14,7 +14,7 @@ struct CoinsScreen: View {
     var body: some View {
         Group {
             if vm.coins.isEmpty {
-                LoadingView(text: "Fetching Coin Data")
+                ProgressView()
             } else {
             List(vm.coins, id: \.symbol) { item in
                 CoinView(item: item)
