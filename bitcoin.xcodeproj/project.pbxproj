@@ -16,6 +16,7 @@
 		2A08EBC727174FC50094192E /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08EBC627174FC50094192E /* CoinView.swift */; };
 		2A08EBCA2717508B0094192E /* CoinsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08EBC92717508B0094192E /* CoinsService.swift */; };
 		2A08EBCD271751570094192E /* CoinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08EBCC271751570094192E /* CoinsViewModel.swift */; };
+		2A08EBCF271753E10094192E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08EBCE271753E10094192E /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2A08EBC627174FC50094192E /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
 		2A08EBC92717508B0094192E /* CoinsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsService.swift; sourceTree = "<group>"; };
 		2A08EBCC271751570094192E /* CoinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewModel.swift; sourceTree = "<group>"; };
+		2A08EBCE271753E10094192E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				2A08EBC627174FC50094192E /* CoinView.swift */,
+				2A08EBCE271753E10094192E /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				2A08EBC4271677280094192E /* CoinsScreen.swift in Sources */,
 				2A08EBBB27166ECF0094192E /* APIConstants.swift in Sources */,
 				2A08EBB827166E770094192E /* Coin.swift in Sources */,
+				2A08EBCF271753E10094192E /* LoadingView.swift in Sources */,
 				2A08EBCA2717508B0094192E /* CoinsService.swift in Sources */,
 				2A08EBA727166E050094192E /* bitcoinApp.swift in Sources */,
 			);

@@ -12,11 +12,15 @@ struct CoinsScreen: View {
     @StateObject private var vm = CoinsViewModelImpl(service: CoinsServiceImpl())
 
     var body: some View {
-        NavigationView {
+        Group {
+            if vm.coins.isEmpty {
+                LoadingView(text: "Fetching Coin Data")
+            } else {
             List(vm.coins, id: \.symbol) { item in
                 CoinView(item: item)
             }
             .navigationBarTitle("Cryptos")
+            }
         }
         .task {
             // get the coins when needed
@@ -24,4 +28,3 @@ struct CoinsScreen: View {
         }
     }
 }
-
