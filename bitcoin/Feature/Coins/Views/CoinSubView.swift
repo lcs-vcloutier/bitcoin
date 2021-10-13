@@ -31,7 +31,7 @@ struct CoinSubView: View {
                         Spacer()
                     }
                     
-                    Text("\(String(format: "%.1f", arguments: [item.current_price]))$")
+                    Text("\(item.current_price)$")
                         .font(.title)
                         .bold()
                     Text("High: \(String(format: "%.1f", arguments: [item.high_24h]))$")
