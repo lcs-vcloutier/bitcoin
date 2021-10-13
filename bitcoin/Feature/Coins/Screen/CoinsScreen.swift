@@ -20,7 +20,7 @@ struct CoinsScreen: View {
                 NavigationView {
                     List(vm.coins, id: \.symbol) { item in
                         
-                        NavigationLink(destination: CoinSubView()) {
+                        NavigationLink(destination: CoinSubView(item: item)) {
                             CoinView(item: item)
                         }
                         

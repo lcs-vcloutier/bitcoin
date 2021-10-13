@@ -14,5 +14,7 @@ struct Coin: Decodable {
     let name: String
     let image: String
     let current_price: Float
+    let high_24h: Float
+    let low_24h : Float
     let price_change_percentage_24h: Float
 }
