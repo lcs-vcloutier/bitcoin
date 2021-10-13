@@ -7,6 +7,7 @@
 
 import Foundation
 
+// CREATING A DATA TYPE TO STORE OUR COINS
 struct Coin: Decodable {
     // They are constants so that no one can change them - data you recieve matches your model
     let symbol: String

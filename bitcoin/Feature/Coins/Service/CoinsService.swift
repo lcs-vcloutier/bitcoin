@@ -7,6 +7,7 @@
 
 import Foundation
 
+//PULLING THE COINS
 protocol CoinsService {
     func fetchCoins() async throws -> [Coin]
 }

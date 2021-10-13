@@ -8,6 +8,7 @@
 import Foundation
 
 
+// ADDING THE COINS TO THE ARRAY
 // Interact with service class and handle any additional business logic
 
 protocol CoinsViewModel: ObservableObject {
