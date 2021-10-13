@@ -12,47 +12,35 @@ struct CoinsScreen: View {
         NavigationView {
             VStack {
                 
-                GroupBox {
-                    VStack (alignment: .leading) {
-                        Text("the top crypto 🚀 🚀 🚀 ")
-                            .font(.title2)
-                        
-                        Text("\(Coin.dummyData.first!.name): \(Coin.dummyData.first!.price_usd)$")
-                            .font(.title)
-                            .bold()
-                        HStack {
-                            Text("1 Hour: \(Coin.dummyData.first!.percent_change_1h)%")
-                            Spacer()
-                            Text("24 Hours: \(Coin.dummyData.first!.percent_change_24h)%")
-                            Spacer()
-                            Text("7 Days: \(Coin.dummyData.first!.percent_change_7d)%")
-                        }
-                        .font(.caption)
-                    }
-                }
-                .padding()
                 
-                    List(Coin.dummyData, id: \.symbol) { item in
-                        
+                
+                List(Coin.dummyData, id: \.symbol) { item in
+                    
+                    GroupBox {
                         VStack (alignment: .leading) {
-
-                        HStack {
-                            Text(item.symbol)
+                            if id == 1 {
+                            Text("the top crypto 🚀 🚀 🚀")
+                                .font(.title2)
+                            }
+                            else {
+                                Text("another crypto")
+                                    .font(.title2)
+                            }
+                            
+                            Text("\(item.name): \(item.price_usd)$")
+                                .font(.title)
                                 .bold()
-                            Spacer()
-                            Text("\(item.price_usd)$")
-                        }
-                        .font(.title)
                             HStack {
-                                Text("1 Hour: \(item.percent_change_1h)%")
+                                Text("recently: \(item.percent_change_1h)%")
                                 Spacer()
-                                Text("24 Hours: \(item.percent_change_24h)%")
+                                Text("yesterday: \(item.percent_change_24h)%")
                                 Spacer()
-                                Text("7 Days: \(item.percent_change_7d)%")
+                                Text("a week: \(item.percent_change_7d)%")
                             }
                             .font(.caption)
                         }
                     }
+                }
                 
             }
             .navigationBarTitle("all the coins")
