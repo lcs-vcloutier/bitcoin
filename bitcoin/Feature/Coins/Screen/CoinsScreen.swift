@@ -18,21 +18,30 @@ struct CoinsScreen: View {
                 ProgressView()
             } else {
                 NavigationView {
-                    List(vm.coins, id: \.symbol) { item in
-                        
-                        NavigationLink(destination: CoinSubView(item: item)) {
-                            CoinView(item: item)
+                    List {
+                        ForEach(searchResults, id: \.name) { item in
+                            
+                            NavigationLink(destination: CoinSubView(item: item)) {
+                                CoinView(item: item)
+                            }
                         }
-                        
                     }
                     .searchable(text: $searchText)
                     .navigationBarTitle("Cryptos")
                 }
             }
+            
         }
         .task {
             // get the coins when needed
             await vm.getCoins()
+        }
+    }
+    var searchResults: [Coin] {
+        if searchText.isEmpty {
+            return vm.coins
+        } else {
+            return vm.coins.filter { $0.name.contains(searchText) }
         }
     }
 }
